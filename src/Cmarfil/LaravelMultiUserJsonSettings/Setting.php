@@ -78,7 +78,7 @@ class Setting {
         $this->column = \Config::get('cmarfil/laravel-multiuser-json-settings::column');
         $this->custom_constraint = \Config::get('cmarfil/laravel-multiuser-json-settings::custom_constraint');
 		$this->constraint_key = \Config::get('cmarfil/laravel-multiuser-json-settings::constraint_key');
-		$this->default_constraint_value = \Config::get('cmarfil/laravel-multiuser-json-settings::constraint_key');
+		$this->default_constraint_value = \Config::get('cmarfil/laravel-multiuser-json-settings::default_constraint_value');
     }
 
 
@@ -151,7 +151,7 @@ class Setting {
 		$constraint_value = $this->negotiate_constraint_value($custom_constraint_value);
         $this->check($constraint_value);
 
-        return array_key_exists($key, $this->settings[$constraint_value]);
+		return array_key_exists($constraint_value, $this->settings) ? array_key_exists($key, $this->settings[$constraint_value]) : false;
     }
 
     /**
