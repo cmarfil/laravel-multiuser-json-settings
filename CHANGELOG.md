@@ -1,6 +1,10 @@
 # Change Log
 All notable changes to this project will be documented in this file.
 
+## [1.1.3] - 2015-02-20 14:25 GMT
+##### Fixed
+- Fix default config and has method fixed - by Grimthorr
+
 ## [1.1.2] - 2015-02-17 12:30 GMT
 ##### Fixed
 - Fix key $constraint_value on check method
